@@ -1,36 +1,37 @@
 <script>
 import AppTitle from './components/AppTitle.vue';
 import AppHero from './components/AppHero.vue';
+import background from './components/background.vue';
 
 export default {
   components: {
     AppTitle,
-    AppHero
+    AppHero,
+    background
   }
 }
 </script>
 
 <template>
-  <div class="body">
-    <div class="container">
-      <AppTitle />
-      <AppHero />
-    </div>
+  <background />
+  <div class="container">
+    <AppTitle />
+    <AppHero />
   </div>
 </template>
 
 <style scoped>
-.body {
-  width: 100%;
-  height: 100%;
-  background-image: url(../public/img1.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+body {
+  margin: 0;
 }
 
 .container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
   width: 600px;
-  margin: auto;
+  margin: 50px auto;
 }
 </style>
